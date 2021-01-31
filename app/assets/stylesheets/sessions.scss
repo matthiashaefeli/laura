@@ -1,7 +1,11 @@
-// Place all the styles related to the home controller here.
+// Place all the styles related to the sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-.navbar {
+.sessionForm {
   padding: 30px;
+
+  div {
+    margin-top: 10px;
+  }
 }
