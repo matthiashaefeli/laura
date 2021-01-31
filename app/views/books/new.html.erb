@@ -1,0 +1,8 @@
+<div>
+  <% if @book.errors.full_messages.any? %>
+    <%= @book.errors.full_messages.join(',') %>
+  <% end %>
+</div>
+<div class='bookForm'>
+  <%= render partial: 'form' %>
+</div>

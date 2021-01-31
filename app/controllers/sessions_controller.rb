@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# class SessionsController
 class SessionsController < ApplicationController
   def create
     user = User.where(username: params['username'])
