@@ -1,10 +1,10 @@
 <div>
-  <% if @user.errors.full_messages.any? %>
-    <%= @user.errors.full_messages.join(',') %>
+  <% if @error %>
+    <%= @error %>
   <% end %>
 </div>
-<div class='userForm'>
-  <%= form_with model: @user do |form| %>
+<div class='sessionForm'>
+  <%= form_with url: "/sessions/create", method: :post do |form| %>
     <div><%= form.email_field :email, placeholder: 'email' %></div>
     <div><%= form.text_field :username, placeholder: 'username' %></div>
     <div><%= form.password_field :password_digest, placeholder: 'password' %></div>
