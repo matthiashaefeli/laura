@@ -1,0 +1,13 @@
+<div>
+  <% if @user.errors.full_messages.any? %>
+    <%= @user.errors.full_messages.join(',') %>
+  <% end %>
+</div>
+<div class='userForm'>
+  <%= form_with model: @user do |form| %>
+    <div><%= form.email_field :email, placeholder: 'email' %></div>
+    <div><%= form.text_field :username, placeholder: 'username' %></div>
+    <div><%= form.password_field :password_digest %></div>
+    <div><%= form.submit %></div>
+  <% end %>
+</div>
