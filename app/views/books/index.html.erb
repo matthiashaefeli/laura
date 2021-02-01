@@ -1,24 +1,13 @@
 <%= render partial: 'navbar/navbar' %>
 <div class='bookindex'>
   <h1>You are what you read</h1>
-  <table>
-    <% @books.each do |book| %>
-      <tr>
-        <td>Title:</td>
-        <td><%= book.title %></td>
-      </tr>
-      <tr>
-        <td>Author:</td>
-        <td><%= book.author %></td>
-      </tr>
-      <% if current_user %>
-        <tr>
-          <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        </tr>
-        <tr>
-          <td><%= link_to 'Delete', book_path(book), method: 'delete' %></td>
-        </tr>
-      <% end %>
+  <% @books.each do |book| %>
+    <div><%= image_tag url_for(book.image) %></div>
+    <div>Title: <%= book.title %></div>
+    <div>Author: <%= book.author %></div>
+    <% if current_user %>
+      <div><%= link_to 'Edit', edit_book_path(book) %></div>
+      <div><%= link_to 'Delete', book_path(book), method: 'delete' %></div>
     <% end %>
-  </table>
+  <% end %>
 </div>
