@@ -1,0 +1,8 @@
+<div>
+  <% if @blog.errors.full_messages.any? %>
+    <%= @blog.errors.full_messages.join(',') %>
+  <% end %>
+</div>
+<div class='blogForm'>
+  <%= render partial: 'form' %>
+</div>

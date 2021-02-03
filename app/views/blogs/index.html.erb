@@ -1,0 +1,12 @@
+<%= render partial: 'navbar/navbar' %>
+<div class='blogIndex'>
+  <h1>My blogs</h1>
+  <% @blogs.each do |blog| %>
+    <div>Title: <%= blog.title %></div>
+    <div>Description: <%= blog.description %></div>
+    <% if current_user %>
+      <div><%= link_to 'Edit', edit_blog_path(blog) %></div>
+      <div><%= link_to 'Delete', blog_path(blog), method: 'delete' %></div>
+    <% end %>
+  <% end %>
+</div>
