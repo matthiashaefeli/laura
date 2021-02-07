@@ -1,0 +1,10 @@
+    <div><%= image_tag url_for(@book.image) %></div>
+    <div>Title: <%= @book.title %></div>
+    <div>Author: <%= @book.author %></div>
+    <div>
+      Comments: <% @book.comments.each do |comment| %>
+        <ul>
+          <li><%= comment.text %></li>
+        </ul>
+      <% end %>
+    </div>
