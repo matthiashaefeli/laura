@@ -30,6 +30,10 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
+  def show
+    @book = Book.find(params[:id])
+  end
+
   def destroy
     book = Book.find(params[:id])
     book.image.purge

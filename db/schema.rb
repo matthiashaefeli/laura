@@ -59,7 +59,8 @@ ActiveRecord::Schema.define(version: 2021_02_03_214903) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.integer "model_id"
+    t.integer "book_id"
+    t.integer "blog_id"
     t.string "text"
     t.string "model_type"
     t.datetime "created_at", precision: 6, null: false
