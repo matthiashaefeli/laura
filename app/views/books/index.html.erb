@@ -3,7 +3,5 @@
   <h1>You are what you read</h1>
   <% @books.each do |book| %>
     <div><%= link_to image_tag(url_for(book.image)), book_path(book) %></div>
-    <div>Title: <%= book.title %></div>
-    <div>Author: <%= book.author %></div>
   <% end %>
 </div>
