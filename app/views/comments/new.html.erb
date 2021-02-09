@@ -1,0 +1,8 @@
+<div>
+  <% if @comment.errors.full_messages.any? %>
+    <%= @comment.errors.full_messages.join(',') %>
+  <% end %>
+</div>
+<div class='commentForm'>
+  <%= render partial: 'form' %>
+</div>
