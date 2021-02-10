@@ -15,6 +15,17 @@ class CommentsController < ApplicationController
     @comment = Comment.new
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @book = Book.find(@comment.book_id)
+    @comment.update(comment_params)
+    redirect_to book_path(@book)
+  end
+
   private
 
   def comment_params

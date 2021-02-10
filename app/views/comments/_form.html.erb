@@ -1,5 +1,7 @@
 <%= form_with model: @comment do |form| %>
-  <%= form.hidden_field :book_id, value: @book.id %>
+  <% if @book %>
+    <%= form.hidden_field :book_id, value: @book.id %>
+  <% end %>
   <div><%= form.text_area :text, placeholder: 'title' %></div>
   <div><%= form.submit %></div>
 <% end %>
